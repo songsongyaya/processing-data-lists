@@ -1,0 +1,15 @@
+with open('world_dev_in.csv') as file:
+    # skip the column names
+    file.readline()
+    # initialize an empty dictionary: 
+    counts_dic={}
+    # process only the first 1000 rows
+    for j in range(1000):
+        # split the current line into a list:
+        line=file.readline().split(',')
+        first_col=line[0]
+        if first_col in counts_dict.keys():
+            counts_dict[first_col]+=1
+        else:
+            counts_dict[first_col]=1
+print(counts_dict)
